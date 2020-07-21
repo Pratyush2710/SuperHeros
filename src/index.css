@@ -46,6 +46,14 @@ Global Styles
 body {
   font-family: var(--primaryFont);
   color: var(--mainBlack);
+  /* background-image: url(./heroBack.jpg); */
+  /* height: 100%; */
+
+  /* Center and scale the image nicely */
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+
   background: var(--mainBackground);
   line-height: 1.4;
   font-size: 1rem;
@@ -215,7 +223,7 @@ Error
 }
 /* 
 ====== 
-Cocktails List 
+Superheros List 
 ======
 */
 
@@ -230,7 +238,7 @@ Cocktails List
   margin-bottom: 3.5rem;
   margin-top: 1rem;
 }
-.cocktails-center {
+.superhero-center {
   width: var(--smallWidth);
   margin: 0 auto;
   max-width: var(--fullWidth);
@@ -242,11 +250,11 @@ Cocktails List
 }
 /* 
 ====== 
-Cocktail 
+SuperHero
 ======
 */
 
-.cocktail {
+.superhero {
   background: var(--mainWhite);
   margin-bottom: 2rem;
   box-shadow: var(--lightShadow);
@@ -255,25 +263,25 @@ Cocktail
   grid-template-rows: auto 1fr;
   border-radius: var(--mainBorderRadius);
 }
-.cocktail:hover {
+.superhero:hover {
   box-shadow: var(--darkShadow);
 }
-.cocktail img {
+.superhero img {
   border-top-left-radius: var(--mainBorderRadius);
   border-top-right-radius: var(--mainBorderRadius);
 }
-.cocktail-footer {
+.superhero-footer {
   padding: 1.5rem;
 }
-.cocktail-footer h3,
-.cocktail-footer h4,
-.cocktail-footer p {
+.superhero-footer h3,
+.superhero-footer h4,
+.superhero-footer p {
   margin-bottom: 0.3rem;
 }
-.cocktail-footer h3 {
+.superhero-footer h3 {
   font-size: 2.2rem;
 }
-.cocktail-footer p {
+.superhero-footer p {
   color: var(--darkGrey);
   margin-bottom: 0.5rem;
 }
@@ -312,11 +320,11 @@ Form
 }
 /* 
 ====== 
-Cocktail
+Superhero
 ======
 */
 
-.cocktail-section {
+.superhero-section {
   text-align: center;
 }
 .drink {
@@ -349,4 +357,3 @@ Cocktail
     padding-top: 0;
   }
 }
-

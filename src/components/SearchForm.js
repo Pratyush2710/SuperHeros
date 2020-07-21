@@ -10,7 +10,7 @@ export default function SearchForm({ setSearchTerm }) {
     e.preventDefault();
   };
 
-  const searchCocktail = () => {
+  const searchHero = () => {
     setSearchTerm(searchValue.current.value);
   };
 
@@ -24,7 +24,7 @@ export default function SearchForm({ setSearchTerm }) {
             type="text"
             name="name"
             id="name"
-            onChange={searchCocktail}
+            onChange={searchHero}
             ref={searchValue}
           />
         </div>

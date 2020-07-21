@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import CocktailsList from "../components/CocktailList";
+import HeroList from "../components/HeroList";
 import SearchForm from "../components/SearchForm";
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("spid");
-  const [cocktails, setCocktails] = useState([]);
+  const [hero, setHero] = useState([]);
 
   React.useEffect(() => {
     setLoading(true);
@@ -17,7 +17,7 @@ export default function Home() {
         const data = await response.json();
         const { results } = data;
         if (results) {
-          const newCocktails = results.map((item) => {
+          const newHero = results.map((item) => {
             const { id, name, image, appearance, biography } = item;
             return {
               id,
@@ -27,9 +27,9 @@ export default function Home() {
               publisher: biography.publisher,
             };
           });
-          setCocktails(newCocktails);
+          setHero(newHero);
         } else {
-          setCocktails([]);
+          setHero([]);
         }
       } catch (error) {
         console.log(error);
@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <main>
       <SearchForm setSearchTerm={setSearchTerm} />
-      <CocktailsList loading={loading} cocktails={cocktails} />
+      <HeroList loading={loading} hero={hero} />
     </main>
   );
 }
