@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 export default function SingleCocktail() {
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
@@ -39,5 +39,38 @@ export default function SingleCocktail() {
     }
     getCocktail();
   }, [id]);
+
+  if (loading) {
+    return <h2 className="section-title">Loading...</h2>;
+  }
+  if (!cocktail) {
+    return <h2 className="section-title"> No superhero to display</h2>;
+  } else {
+    return (
+      <section className="section cocktail-section">
+        <Link to="/" className="btn btn-primary">
+          {" "}
+          Back Home
+        </Link>
+        <h2 className="section-title">{cocktail.name}</h2>
+        <div className="drink">
+          <img src={cocktail.image} alt={cocktail.name} />
+          <div className="drink-info">
+            <p>Name : {cocktail.name}</p>
+            <p>Name : {cocktail.name}</p>
+            <p>Name : {cocktail.name}</p>
+            <p>Name : {cocktail.name}</p>
+            <p>Name : {cocktail.name}</p>
+            <p>Name : {cocktail.name}</p>
+            <p>Name : {cocktail.name}</p>
+            <p>Name : {cocktail.name}</p>
+            <p>Name : {cocktail.name}</p>
+            <p>Name : {cocktail.name}</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return <h1>single cocktail page id : {id}</h1>;
 }
