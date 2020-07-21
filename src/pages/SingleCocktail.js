@@ -46,31 +46,44 @@ export default function SingleCocktail() {
   if (!cocktail) {
     return <h2 className="section-title"> No superhero to display</h2>;
   } else {
+    console.log(cocktail.aliases);
     return (
       <section className="section cocktail-section">
-        <Link to="/" className="btn btn-primary">
-          {" "}
-          Back Home
-        </Link>
         <h2 className="section-title">{cocktail.name}</h2>
         <div className="drink">
           <img src={cocktail.image} alt={cocktail.name} />
           <div className="drink-info">
             <p>Name : {cocktail.name}</p>
-            <p>Name : {cocktail.name}</p>
-            <p>Name : {cocktail.name}</p>
-            <p>Name : {cocktail.name}</p>
-            <p>Name : {cocktail.name}</p>
-            <p>Name : {cocktail.name}</p>
-            <p>Name : {cocktail.name}</p>
-            <p>Name : {cocktail.name}</p>
-            <p>Name : {cocktail.name}</p>
-            <p>Name : {cocktail.name}</p>
+            <p>Full Name : {cocktail.fullName}</p>
+            <p>Publisher: {cocktail.publisher}</p>
+            <p>First Appearance : {cocktail.firstAppearance}</p>
+            <ul>
+              <p>
+                Aliases:
+                <br />
+                <br />{" "}
+                {cocktail.aliases.map((item, index) => {
+                  return item ? (
+                    <li>
+                      {" "}
+                      <span key={index}>{item}</span>
+                    </li>
+                  ) : null;
+                })}
+                {/* {cocktail.aliases} */}
+              </p>
+            </ul>
           </div>
         </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <Link to="/" className="btn btn-primary">
+          {" "}
+          Back Home
+        </Link>
       </section>
     );
   }
-
-  return <h1>single cocktail page id : {id}</h1>;
 }

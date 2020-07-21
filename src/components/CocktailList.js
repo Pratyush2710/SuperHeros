@@ -12,7 +12,7 @@ export default function CocktailList({ loading, cocktails }) {
   console.log(cocktails);
   return (
     <section className="section">
-      <h2 className="section-title">SuperHeros</h2>
+      <h2 className="section-title">Super Heros</h2>
       <div className="cocktails-center">
         {cocktails.map((item) => {
           return <Cocktail key={item.id} {...item} />;
