@@ -4,7 +4,7 @@ import SearchForm from "../components/SearchForm";
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("az");
+  const [searchTerm, setSearchTerm] = useState("a");
   const [cocktails, setCocktails] = useState([]);
 
   React.useEffect(() => {
